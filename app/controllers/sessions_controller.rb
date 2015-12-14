@@ -3,13 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.find_by(email: params[:email])
+    user = User.find_by(username: params[:username])
 
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to("/")
+      redirect_to user
+      flash[:notice] = "WELCOME BACK #{current_user.username}!"
     else
-      redirect_to("/login")
+      redirect_to("/signin")
     end
   end
 

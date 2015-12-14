@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       redirect_to @user
+      flash[:notice] = "WELCOME #{current_user.username}!"
     else
       render :new
     end
@@ -36,6 +37,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
       redirect_to @user
+      flash[:notice] = "ACCOUNT SUCCESSFULY UPDATED"
     else
       render :edit
     end
@@ -46,6 +48,7 @@ class UsersController < ApplicationController
     @user = current_user
     @user.destroy
     redirect_to("/")
+    flash[:notice] = "ACCOUNT SUCCESSFULY CLOSED"
   end
 
   private
