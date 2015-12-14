@@ -44,3 +44,11 @@ footer {
   border: solid 4px white;
   background-color: rgba(240, 255, 255, .8);
 }
+
+img.dots {
+  background: url("http://www.clker.com/cliparts/T/G/b/7/r/A/red-dot-md.png");
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px inset;
+}

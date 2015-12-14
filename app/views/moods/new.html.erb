@@ -1,0 +1,27 @@
+<div ="errors">
+  <% @mood.errors.full_messages.each do |msg| %>
+    <%= msg %>
+  <% end %>
+</div>
+
+<h2>How's it today?</h2>
+<h5>(Select one.)</h5>
+
+<!-- form -->
+<%= form_for(@mood, url: user_moods_path) do |f| %>
+<table>
+  <tr>
+    <th>Hot?</th>
+    <th>Warm?</th>
+    <th>Cold?</th>
+  </tr>
+  <tr>
+    <td><%= f.check_box :hot %></td>
+    <td><%= f.check_box :warm %></td>
+    <td><%= f.check_box :cold %></td>
+  </tr>
+  <tr>
+    <td><%= f.button "SUBMIT" %></td>
+  </tr>
+</table>
+<% end %>

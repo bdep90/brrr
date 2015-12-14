@@ -2,6 +2,40 @@
   <div class="notice"><%= flash[:notice] %></div>
 <% end %>
 
-<h1>ki</h1>
+<%= link_to "Edit Account", "/users/#{current_user.id}/edit" %>
+<%= link_to "New Entry", "/users/#{current_user.id}/moods/new" %>
 
-<!--  -->
+<!-- table -->
+<table>
+  <tr>
+    <th></th>
+    <th><u>DATE</u></th>
+    <th><u>HOT</u></th>
+    <th><u>WARM</u></th>
+    <th><u>COLD</u></th>
+  </tr>
+  <% @user_moods.each do |mood| %>
+  <tr>
+    <td><%= link_to "X", "/users/#{current_user.id}/moods/#{mood.id}", method: :delete %></td>
+    <td>
+      <%= mood.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%b %d") %><br>
+      <%= mood.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M %p") %>
+    </td>
+    <% if mood.hot %>
+    <td><%= image_tag("http://www.clker.com/cliparts/N/m/G/q/D/0/green-dot-md.png", class: "dots") %></td>
+    <% elsif !mood.hot %>
+    <td><%= image_tag("http://www.clker.com/cliparts/T/G/b/7/r/A/red-dot-md.png", class: "dots") %></td>
+    <% end %>
+    <% if mood.warm %>
+    <td><%= image_tag("http://www.clker.com/cliparts/N/m/G/q/D/0/green-dot-md.png", class: "dots") %></td>
+    <% elsif !mood.warm %>
+    <td><%= image_tag("http://www.clker.com/cliparts/T/G/b/7/r/A/red-dot-md.png", class: "dots") %></td>
+    <% end %>
+    <% if mood.cold %>
+    <td><%= image_tag("http://www.clker.com/cliparts/N/m/G/q/D/0/green-dot-md.png", class: "dots") %></td>
+    <% elsif !mood.cold %>
+    <td><%= image_tag("http://www.clker.com/cliparts/T/G/b/7/r/A/red-dot-md.png", class: "dots") %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
