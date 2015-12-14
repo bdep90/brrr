@@ -19,6 +19,7 @@ class MoodsController < ApplicationController
   # new mood
   def create
     @mood = Mood.new(mood_params)
+    @mood.user_id = current_user.id
     if @mood.save
       redirect_to user_path(current_user)
     else

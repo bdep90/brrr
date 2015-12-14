@@ -27,13 +27,25 @@
    font-size: 20px;
  }
 
+.navbar {
+  background-color: #2E9ECF;
+  color: darkgrey;
+  height: 80px;
+  margin: 0;
+  font-size: 20px;
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
 footer {
   background-color: #2E9ECF;
-  height: 50px;
+  height: 30px;
   bottom: 0;
   position: fixed;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .notice {
@@ -41,14 +53,93 @@ footer {
   text-align: center;
   font-size: 18px;
   padding: 5px 0px 5px 0px;
-  border: solid 4px white;
+  border: solid 2px white;
   background-color: rgba(240, 255, 255, .8);
 }
 
+.errors {
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px 0px 5px 0px;
+  border: solid 2px white;
+  background-color: rgba(200, 150, 255, .8);
+}
+
+button {
+  background: #a2b2bd;
+  background-image: -webkit-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: -moz-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: -ms-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: -o-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: linear-gradient(to bottom, #a2b2bd, #4e5d66);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 10px;
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  padding-top: 20px;
+}
+
+
+/*~~~~~~~~*/
+/* forms */
+/*~~~~~~~*/
+table {
+  display: inline-block;
+}
+
+tbody {
+  margin: 0;
+  padding-top: 40px;
+  display: inline-table;
+}
+
+th {
+  min-width: 80px;
+}
+
+
+/*~~~~~~~~~~~~~*/
+/* user show */
+/*~~~~~~~~~~~~~*/
 img.dots {
   background: url("http://www.clker.com/cliparts/T/G/b/7/r/A/red-dot-md.png");
   height: 30px;
   width: 30px;
   border-radius: 50%;
   border: 2px inset;
+}
+
+td.moods  {
+  width: 100px;
+  padding-bottom: 10px;
+}
+
+td#link.moods {
+  width: 40px;
+}
+
+tr#demo {
+  opacity: .4;
+  font: italic;
 }

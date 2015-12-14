@@ -1,5 +1,5 @@
 <%= form_for(@user) do |f| %>
-<table>
+<table align="center">
   <tr>
     <td>Username:</td>
     <td><%= f.text_field :username %></td>
@@ -12,8 +12,6 @@
     <td>Password Confirmation:</td>
     <td><%= f.password_field :password_confirmation %></td>
   </tr>
-  <tr>
-    <td><%= f.button "SUBMIT" %></td>
-  </tr>
-</table>
+</table><br>
+<%= f.button "SUBMIT" %>
 <% end %>

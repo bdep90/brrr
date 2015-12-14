@@ -1,11 +1,16 @@
+<div class="navbar">
+  <%= link_to "Home", "/users/#{current_user.id}" %> |
+  <%= link_to "Sign Out", "/signout" %>
+</div>
+
 <div ="errors">
   <% @mood.errors.full_messages.each do |msg| %>
     <%= msg %>
   <% end %>
 </div>
 
-<h2>How's it today?</h2>
-<h5>(Select one.)</h5>
+<h2>How Do You Feel Today?</h2>
+<h3>(Select one.)</h3>
 
 <!-- form -->
 <%= form_for(@mood, url: user_moods_path) do |f| %>
@@ -20,8 +25,6 @@
     <td><%= f.check_box :warm %></td>
     <td><%= f.check_box :cold %></td>
   </tr>
-  <tr>
-    <td><%= f.button "SUBMIT" %></td>
-  </tr>
-</table>
+</table><br>
+<%= f.button "SUBMIT" %>
 <% end %>

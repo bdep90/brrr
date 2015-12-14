@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
       redirect_to user
-      flash[:notice] = "WELCOME BACK #{current_user.username}!"
+      flash[:notice] = "HI #{current_user.username}!"
     else
       redirect_to("/signin")
     end
