@@ -8,3 +8,4 @@ A user can...
 
 BONUS:
 - Use D3 to display data in chart.
+- Add more tracking options.
