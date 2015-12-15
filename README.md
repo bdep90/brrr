@@ -1,5 +1,22 @@
 ### BRRRR: Are you cold?
 
+Are you hot? warm? cold? A simple app to track your temperature.  
+[VIEW Users Stories](users_stories.md)
+
+Technologies Used:
+- Ruby 4
+
+Dependencies:
+- bcrypt
+- pry-rails
+- jquery-rails
+
+Deployment:
+- [Heroku App]()
+
+
+
+
 
 
 

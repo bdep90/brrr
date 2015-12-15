@@ -13,3 +13,140 @@
  *= require_tree .
  *= require_self
  */
+ html {
+   font-family: 'Roboto', sans-serif;
+   background-color: lightgrey;
+   height: 100%;
+   text-align: center;
+ }
+
+ body {
+   height: 100%;
+   width: 100%;
+   margin: 0;
+   font-size: 20px;
+   background: url("http://cdn2.landscapehdwalls.com/wallpapers/1/clouds-in-the-sky-428-2560x1600.jpg");
+   background-size: cover;
+ }
+
+.navbar {
+  background-color: #2E9ECF;
+  color: darkgrey;
+  height: 60px;
+  margin: 0;
+  font-size: 20px;
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.container-grey {
+  background-color: lightgrey;
+}
+
+footer {
+  background-color: #2E9ECF;
+  height: 30px;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  padding-top: 10px;
+}
+
+.notice {
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px 0px 5px 0px;
+  border: solid 2px white;
+  background-color: rgba(240, 255, 255, .8);
+}
+
+.errors {
+  margin: 10px 0px 10px 0px;
+  text-align: center;
+  font-size: 18px;
+  padding: 5px 0px 5px 0px;
+  border: solid 2px white;
+  background-color: rgba(200, 150, 255, .8);
+}
+
+button {
+  background: #a2b2bd;
+  background-image: -webkit-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: -moz-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: -ms-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: -o-linear-gradient(top, #a2b2bd, #4e5d66);
+  background-image: linear-gradient(to bottom, #a2b2bd, #4e5d66);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 10px;
+  color: #ffffff;
+  margin-top: 10px;
+  padding: 10px;
+  text-decoration: none;
+}
+
+button:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+h1 {
+  padding-top: 20px;
+}
+
+
+/*~~~~~~~~*/
+/* forms */
+/*~~~~~~~*/
+table {
+  display: inline-block;
+}
+
+tbody {
+  margin: 0;
+  padding-top: 40px;
+  display: inline-table;
+}
+
+th {
+  min-width: 80px;
+}
+
+
+/*~~~~~~~~~~~~~*/
+/* user show */
+/*~~~~~~~~~~~~~*/
+img.dots {
+  background: url("http://www.clker.com/cliparts/T/G/b/7/r/A/red-dot-md.png");
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  border: 2px inset;
+}
+
+#moods {
+  height: 50%;
+  overflow: scroll;
+}
+
+td.moods  {
+  width: 100px;
+  padding-bottom: 10px;
+}
+
+tr#demo {
+  opacity: .4;
+  font: italic;
+}

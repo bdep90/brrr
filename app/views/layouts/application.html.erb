@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Brrrr</title>
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,900' rel='stylesheet' type='text/css'>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,6 +10,8 @@
 <body>
 
 <%= yield %>
-
+  <footer>
+    &copy;BRRR 2015
+  </footer>
 </body>
 </html>

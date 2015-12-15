@@ -1,0 +1,58 @@
+<div class="navbar">
+  <%= link_to "New Entry", "/users/#{current_user.id}/moods/new" %> |
+  <%= link_to "Edit Account", "/users/#{current_user.id}/edit" %> |
+  <%= link_to "Sign Out", "/signout" %>
+</div>
+
+<div class="clouds">
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
+
+  <!-- table -->
+  <div id="moods">
+    <table align="center" class="moods">
+      <tr class="moods">
+        <th></th>
+        <th><u>DATE</u></th>
+        <th><u>HOT</u></th>
+        <th><u>WARM</u></th>
+        <th><u>COLD</u></th>
+      </tr>
+      <tr id="demo">
+        <td class="moods">X</td>
+        <td class="moods">
+          Dec 14<br>
+          (03:30 PM)
+        </td>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/m/I/n/1/T/P/orange-dot-md.png", class: "dots") %></td>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/j/L/l/O/b/A/blue-dot-md.png", class: "dots") %></td>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/j/L/l/O/b/A/blue-dot-md.png", class: "dots") %></td>
+      </tr>
+      <% @user_moods.each do |mood| %>
+      <tr class="moods">
+        <td class="moods" id="link"><%= link_to "X", "/users/#{current_user.id}/moods/#{mood.id}", method: :delete %></td>
+        <td class="moods">
+          <%= mood.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%b %d") %><br>
+          <%= mood.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%I:%M %p") %>
+        </td>
+        <% if mood.hot %>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/m/I/n/1/T/P/orange-dot-md.png", class: "dots") %></td>
+        <% elsif !mood.hot %>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/j/L/l/O/b/A/blue-dot-md.png", class: "dots") %></td>
+        <% end %>
+        <% if mood.warm %>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/m/I/n/1/T/P/orange-dot-md.png", class: "dots") %></td>
+        <% elsif !mood.warm %>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/j/L/l/O/b/A/blue-dot-md.png", class: "dots") %></td>
+        <% end %>
+        <% if mood.cold %>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/m/I/n/1/T/P/orange-dot-md.png", class: "dots") %></td>
+        <% elsif !mood.cold %>
+        <td class="moods"><%= image_tag("http://www.clker.com/cliparts/j/L/l/O/b/A/blue-dot-md.png", class: "dots") %></td>
+        <% end %>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
