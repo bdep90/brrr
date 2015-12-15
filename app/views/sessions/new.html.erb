@@ -1,17 +1,19 @@
-<% if flash[:notice] %>
-  <div class="notice"><%= flash[:notice] %></div>
-<% end %>
+<div class="clouds">
+  <% if flash[:notice] %>
+    <div class="notice"><%= flash[:notice] %></div>
+  <% end %>
 
-<%= form_tag "/signin" do |f| %>
-<table align="center">
-  <tr>
-    <td>Username:</td>
-    <td><%= text_field_tag :username %></td>
-  </tr>
-  <tr>
-    <td>Password:</td>
-    <td><%= password_field_tag :password %></td>
-  </tr>
-</table><br>
-<%= button_tag "SUBMIT" %>
-<% end %>
+  <%= form_tag "/signin" do |f| %>
+  <table align="center">
+    <tr>
+      <td>Username:</td>
+      <td><%= text_field_tag :username %></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><%= password_field_tag :password %></td>
+    </tr>
+  </table><br>
+  <%= button_tag "SUBMIT" %>
+  <% end %>
+</div>

@@ -3,28 +3,33 @@
   <%= link_to "Sign Out", "/signout" %>
 </div>
 
-<div ="errors">
-  <% @mood.errors.full_messages.each do |msg| %>
-    <%= msg %>
+<div class="scroll">
+  <div ="errors">
+    <% @mood.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+  </div>
+
+  <h2>How Do You Feel Today?</h2>
+
+  <!-- form -->
+  <%= form_for(@mood, url: user_moods_path) do |f| %>
+  <table>
+    <tr>
+      <th>
+        <%= f.label(:hot, "Hot?") %><br>
+        <%= f.check_box(:hot) %>
+      </th>
+      <th>
+        <%= f.label(:warm, "Warm?") %><br>
+        <%= f.check_box(:warm) %>
+      </th>
+      <th>
+        <%= f.label(:cold, "Cold?") %><br>
+        <%= f.check_box(:cold) %>
+      </th>
+    </tr>
+  </table><br>
+  <%= f.button "SUBMIT" %>
   <% end %>
 </div>
-
-<h2>How Do You Feel Today?</h2>
-<h3>(Select one.)</h3>
-
-<!-- form -->
-<%= form_for(@mood, url: user_moods_path) do |f| %>
-<table>
-  <tr>
-    <th>Hot?</th>
-    <th>Warm?</th>
-    <th>Cold?</th>
-  </tr>
-  <tr>
-    <td><%= f.check_box :hot %></td>
-    <td><%= f.check_box :warm %></td>
-    <td><%= f.check_box :cold %></td>
-  </tr>
-</table><br>
-<%= f.button "SUBMIT" %>
-<% end %>

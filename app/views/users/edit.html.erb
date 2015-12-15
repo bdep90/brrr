@@ -6,26 +6,28 @@
   <%= link_to "Sign Out", "/signout" %>
 </div>
 
-<div class="errors">
-  <% @user.errors.full_messages.each do |msg| %>
-    <%= msg %><br>
+<div class="clouds">
+  <div class="errors">
+    <% @user.errors.full_messages.each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  </div>
+
+  <%= form_for(@user) do |f| %>
+  <table align="center">
+    <tr>
+      <td>Username:</td>
+      <td><%= f.text_field :username, placeholder: "#{current_user.username}" %></td>
+    </tr>
+    <tr>
+      <td>Password:</td>
+      <td><%= f.password_field :password %></td>
+    </tr>
+    <tr>
+      <td>Password Confirmation:</td>
+      <td><%= f.password_field :password_confirmation %></td>
+    </tr>
+  </table><br>
+  <%= f.button "SUBMIT" %>
   <% end %>
 </div>
-
-<%= form_for(@user) do |f| %>
-<table align="center">
-  <tr>
-    <td>Username:</td>
-    <td><%= f.text_field :username, placeholder: "#{current_user.username}" %></td>
-  </tr>
-  <tr>
-    <td>Password:</td>
-    <td><%= f.password_field :password %></td>
-  </tr>
-  <tr>
-    <td>Password Confirmation:</td>
-    <td><%= f.password_field :password_confirmation %></td>
-  </tr>
-</table><br>
-<%= f.button "SUBMIT" %>
-<% end %>
